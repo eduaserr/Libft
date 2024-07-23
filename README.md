@@ -1,5 +1,6 @@
 <div>
-	<h1 align="center"> ~LIBFT~ <br><img alt="success 125/100" src="https://img.shields.io/badge/125%2F100-green?style=plastic&logoColor=green&label=success"></h1>
+	<img align="right" alt="libftBonus" src="../img_src/libftm.png" width="75px">
+	<h1 align="center">&emsp; ~LIBFT~ <br>&emsp;<img alt="success 125/100" src="https://img.shields.io/badge/125%2F100-green?style=plastic&logoColor=green&label=success"></h1>
 </div>
 <div align="justify">
 	<code>Libft</code> is the first project in the <b>Common Core</b> from <b>42Cursus</b>. In this proyect you should learn how to program some standart library C functions, as many other functions that will be usefull for future proyects.
