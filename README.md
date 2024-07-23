@@ -1,5 +1,5 @@
 <div>
-	<img align="right" alt="libftBonus" src="../img_src/libftm.png" width="75px">
+	<img align="right" alt="libftBonus" src="https://github.com/eduaserr/42-project-badges/blob/a48e677fd4871e6999a9564101dca26091ec18ef/badges/libftm.png" width="75px">
 	<h1 align="center">&emsp; ~LIBFT~ <br>&emsp;<img alt="success 125/100" src="https://img.shields.io/badge/125%2F100-green?style=plastic&logoColor=green&label=success"></h1>
 </div>
 <div align="justify">
