@@ -6,7 +6,7 @@
 #    By: eduaserr < eduaserr@student.42malaga.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 14:05:06 by eduaserr          #+#    #+#              #
-#    Updated: 2024/09/05 19:45:51 by eduaserr         ###   ########.fr        #
+#    Updated: 2024/09/06 11:31:28 by eduaserr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ all : $(NAME)
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
 	@(RANLIB) $(NAME)
-	@echo "Compiled succesfully"
+	@echo "libft compiled successfully"
 
 bonus : $(OBJS) $(BONUS_OB)
 	@(AR) $(NAME) $(OBJS) $(BONUS_OB)
@@ -52,10 +52,12 @@ bonus : $(OBJS) $(BONUS_OB)
 printf: $(PF_OBJS)
 	@$(AR) $(NAME) $(PF_OBJS)
 	@$(RANLIB) $(NAME)
+	@echo "printf compiled successfully"
 
 gnl: $(GNL_OBJS)
 	@$(AR) $(NAME) $(GNL_OBJS)
 	@$(RANLIB) $(NAME)
+	@echo "GNL compiled successfully"
 
 %.o : %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
