@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduaserr < eduaserr@student.42malaga.co    +#+  +:+       +#+        */
+/*   By: eduaserr <eduaserr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:40:57 by eduaserr          #+#    #+#             */
-/*   Updated: 2024/08/05 21:01:21 by eduaserr         ###   ########.fr       */
+/*   Updated: 2025/02/01 22:30:25 by eduaserr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,20 @@
 // INCLUDE FOR GET_NEXT_LINE
 # include <fcntl.h>
 
+// struct in ft_flood_fill.c
+typedef struct s_data
+{
+	void			*width;
+	void			*length;
+	void			*wall;
+	void			*floor;
+	void			*coin;
+	void			*exit;
+	void			*player;
+	void			*next;
+}			t_data;
+
+// struct in bonus functions
 typedef struct s_list
 {
 	void			*content;
@@ -403,6 +417,18 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
+/**
+ * @brief recursive function for search an specific char in a 2D array.
+ * @param data structure
+ * @param map 2D map array
+ * @param search char to find
+ * @param y int
+ * @param x int
+ * @return true (1) if the char is on the map. False (0) if not.
+ * @warning This function is recursive, that means it will look around his
+ * first appearance. then it continoues where is true and follow this path.
+*/
+int	flood_fill(t_data *data, char **map, int y, int x, char search);
 /* FT_PRINTF FOLDER */
 
 # define INT_BASE "0123456789"
