@@ -6,7 +6,7 @@
 /*   By: eduaserr < eduaserr@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:40:57 by eduaserr          #+#    #+#             */
-/*   Updated: 2025/02/11 18:36:00 by eduaserr         ###   ########.fr       */
+/*   Updated: 2025/02/11 20:01:56 by eduaserr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -428,11 +428,23 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
  * @warning This function is recursive, that means it will look around his
  * first appearance. then it continoues where is true and follow this path.
 */
-int	flood_fill(t_data *data, char **map, int y, int x, char search);
-
+int		flood_fill(t_data *data, char **map, int y, int x, char search);
+/**
+ * @brief print array.
+ * @param str
+ */
 void	ft_printlines(char *str);
-
+/**
+ * @brief prints every array in a 2D map.
+ * @param file_map the file map.
+ */
 void	ft_printmap(char **file_map);
+/**
+ * @brief 
+ * @param arr duplicate with malloc any 2D array.
+ * @return 
+ */
+char	**ft_arrdup(char **arr);
 /* FT_PRINTF FOLDER */
 
 # define INT_BASE "0123456789"
