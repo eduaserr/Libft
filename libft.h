@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduaserr <eduaserr@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: eduaserr < eduaserr@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:40:57 by eduaserr          #+#    #+#             */
-/*   Updated: 2025/02/01 22:30:25 by eduaserr         ###   ########.fr       */
+/*   Updated: 2025/02/11 18:36:00 by eduaserr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -429,6 +429,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
  * first appearance. then it continoues where is true and follow this path.
 */
 int	flood_fill(t_data *data, char **map, int y, int x, char search);
+
+void	ft_printlines(char *str);
+
+void	ft_printmap(char **file_map);
 /* FT_PRINTF FOLDER */
 
 # define INT_BASE "0123456789"
