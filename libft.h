@@ -6,7 +6,7 @@
 /*   By: eduaserr < eduaserr@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:40:57 by eduaserr          #+#    #+#             */
-/*   Updated: 2025/02/11 20:01:56 by eduaserr         ###   ########.fr       */
+/*   Updated: 2025/03/13 17:01:19 by eduaserr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -440,11 +440,17 @@ void	ft_printlines(char *str);
  */
 void	ft_printmap(char **file_map);
 /**
- * @brief 
- * @param arr duplicate with malloc any 2D array.
+ * @brief duplicate with malloc any 2D array.
+ * @param arr
  * @return 
  */
 char	**ft_arrdup(char **arr);
+/**
+ * @brief frees any 2D array map allocated.
+ * @param map 2D map array.
+ */
+void	ft_freemap(char **map);
+
 /* FT_PRINTF FOLDER */
 
 # define INT_BASE "0123456789"
