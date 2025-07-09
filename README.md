@@ -51,3 +51,6 @@ Original Functions|Description|Aditional functions|Description|BONUS|Description
 [ft_strlcpy](https://github.com/eduaserr/Libft/blob/main/func/ft_strlcpy.c)|Copies a string up to a certain size.
 [ft_strlcat](https://github.com/eduaserr/Libft/blob/main/func/ft_strlcat.c)|Concatenates strings with a specified size limit.
 [ft_atoi](https://github.com/eduaserr/Libft/blob/main/func/ft_atoi.c)|Converts a string into an integer.
+
+---
+*Proyecto desarrollado como parte del curriculum de 42.*
