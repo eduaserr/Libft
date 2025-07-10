@@ -6,7 +6,7 @@
 /*   By: eduaserr < eduaserr@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:40:57 by eduaserr          #+#    #+#             */
-/*   Updated: 2025/03/19 23:00:15 by eduaserr         ###   ########.fr       */
+/*   Updated: 2025/07/09 17:25:08 by eduaserr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,15 @@ int		ft_isalnum(int a);
 	non-zero if tests true.
  */
 int		ft_isspace(int a);
+
+/**
+ * @brief Remove all double spaces in str. Doesn't add aditionals spaces
+ * at the start, neither at the end.
+ * 
+ * @param str
+ * @return (char *) Realloc the same str. Received ass char **.
+ */
+char	*ft_rm_db_spaces(char **str);
 
 /**
  * @brief Tests for any character for which isupper or islower is true. 
@@ -191,6 +200,30 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 /**
+ * @brief Locates the first occurence of 'c' in the string pointed to by 's'.
+	Null character terminated is considered to be part of the string;
+	therefor if 'c' is '\0', the function locate the terminating '\0'.
+ * 
+ * @param s 
+ * @param c 
+ * @return (int) Return int to the located character, or -1 if the
+	character does not appear in the string.
+ */
+int		ft_istrchr(char *s, int c);
+
+/**
+ * @brief Locates the last occurence of 'c' in the string pointed to by 's'.
+	Null character terminated is considered to be part of the string;
+	therefor if 'c' is '\0', the function locate the terminating '\0'.
+ * 
+ * @param s 
+ * @param c 
+ * @return (int) Return int to the located character, or -1 if the
+	character does not appear in the string.
+ */
+int		ft_istrrchr(char *s, int c);
+
+/**
  * @brief Locates the first occurence of 'c' (converted to a char) in the string
 	pointed to by 's'. Null character terminated is considered to be part of the
 	string; therefor if 'c' is '\0', the function locate the terminating '\0'.
@@ -211,6 +244,8 @@ char	*ft_strchr(const char *s, int c);
 	if the character does not appear in the string.
  */
 char	*ft_strrchr(const char *s, int c);
+
+int		ft_strcmp(const char *s1, const char *s2);
 /**
  * @brief Lexicographically compare the null-terminated strings 's1' and 's2'.
 	Not more than 'n' characters. Designed for comparing strings rather than
@@ -328,6 +363,15 @@ int		ft_atoi(const char *str);
 size_t	ft_strlcat(char *dest, const char *src, size_t dstsize);
 
 /**
+ * @brief Copy strings, and guarantee NUL-termination.
+ * 
+ * @param dest 
+ * @param src 
+ * @return (char *) Return the string it created.
+ */
+char	*ft_strcpy(char *dest, char *src);
+
+/**
  * @brief Copy strings. Function take the full size of the
 	destination buffer and guarantee NUL-termination if there is room.
 	Copies up to 'dstsize' - 1 characters from the string 'src' to 'dst',
@@ -417,38 +461,49 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /**
- * @brief recursive function for search an specific char in a 2D array.
+ * @brief recursive function for search an specific char in a 2D array matrix.
  * @param data structure
- * @param map 2D map array
+ * @param map 2D array matrix
  * @param search char to find
  * @param y int
  * @param x int
- * @return true (1) if the char is on the map. False (0) if not.
+ * @return true (1) if the char is in the matrix. False (0) if not.
  * @warning This function is recursive, that means it will look around his
  * first appearance. then it continoues where is true and follow this path.
 */
-int		ft_flood_fill(t_data *data, char **map, int y, int x, char search);
+//int		ft_flood_fill(t_data *data, char **map, int y, int x, char search);
 /**
  * @brief print array.
  * @param str
  */
 void	ft_printlines(char *str);
 /**
- * @brief prints every array in a 2D map.
- * @param file_map the file map.
+ * @brief prints every array in a 2D matrix.
+ * @param file_matrix the file matrix.
  */
-void	ft_printmap(char **file_map);
+void	ft_printmatrix(char **file_matrix);
 /**
  * @brief duplicate with malloc any 2D array.
  * @param arr
  * @return 
+ * @warning must allocate type * (size + 1) into parenthesis.
  */
 char	**ft_arrdup(char **arr);
 /**
- * @brief frees any 2D array map allocated.
- * @param map 2D map array.
+ * @brief frees any 2D array matrix allocated.
+ * @param matrix 2D matrix array.
  */
-void	ft_freemap(char **map);
+void	ft_freematrix(char ***matrix);
+
+/**
+ * @brief Extracts a complete word (without spaces) from a specified
+ * position (i) in the string to the next space or end of string.
+ * Useful for parsing commands word by word.
+ * @param str full str containing text
+ * @param i index where the word start.
+ * @return (word) new malloc str separated by spaces.
+ */
+char	*get_word(char *str, int i);
 
 /* FT_PRINTF FOLDER */
 
@@ -521,5 +576,9 @@ char	*ft_substr_gnl(char *str, ssize_t start, ssize_t len);
 char	*ft_strjoin_gnl(char *s1, char *s2);
 
 char	*get_next_line(int fd);
+
+/* MINISHELL FOLDER */
+
+char	*get_in_quotes(char *str, int start, int end);
 
 #endif

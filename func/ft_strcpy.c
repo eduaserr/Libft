@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arrdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eduaserr < eduaserr@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/11 19:56:20 by eduaserr          #+#    #+#             */
-/*   Updated: 2025/07/09 15:19:25 by eduaserr         ###   ########.fr       */
+/*   Created: 2025/04/14 20:56:09 by eduaserr          #+#    #+#             */
+/*   Updated: 2025/04/14 20:56:30 by eduaserr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	**ft_arrdup(char **arr)
+char	*ft_strcpy(char *dest, char *src)
 {
-	char	**dup;
-	int		i;
+	int	i;
 
 	i = 0;
-	while (arr[i])
-		i++;
-	dup = (char **)malloc(sizeof(char *) * (i + 1));
-	if (!dup)
-		return (NULL);
-	i = 0;
-	while (arr[i])
+	while (src[i])
 	{
-		dup[i] = ft_strdup(arr[i]);
-		if (!dup[i])
-		{
-			ft_freematrix(&dup);
-			return (NULL);
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	dup[i] = NULL;
-	return (dup);
+	dest[i] = '\0';
+	return (dest);
 }

@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arrdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eduaserr < eduaserr@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/11 19:56:20 by eduaserr          #+#    #+#             */
-/*   Updated: 2025/07/09 15:19:25 by eduaserr         ###   ########.fr       */
+/*   Created: 2025/07/03 18:55:18 by eduaserr          #+#    #+#             */
+/*   Updated: 2025/07/03 18:55:34 by eduaserr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	**ft_arrdup(char **arr)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	char	**dup;
-	int		i;
+	size_t	i;
 
 	i = 0;
-	while (arr[i])
+	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
 		i++;
-	dup = (char **)malloc(sizeof(char *) * (i + 1));
-	if (!dup)
-		return (NULL);
-	i = 0;
-	while (arr[i])
-	{
-		dup[i] = ft_strdup(arr[i]);
-		if (!dup[i])
-		{
-			ft_freematrix(&dup);
-			return (NULL);
-		}
-		i++;
-	}
-	dup[i] = NULL;
-	return (dup);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
